@@ -1,0 +1,39 @@
+﻿body {
+    background: #a9a9a985;
+}
+
+img {
+    max-height: 200px;
+}
+
+footer {
+    background-color: #2C3E50 !important;
+    text-align: center;
+    height: 50px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+audio {
+    width: 100%;
+}
+
+.validation, .field-validation-error {
+    color: red;
+}
+
+#navbarColor01 {
+    flex-grow: 0;
+}
+
+#dataTable {
+    margin-top: 30px;
+}

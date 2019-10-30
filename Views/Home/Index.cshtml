@@ -1,0 +1,32 @@
+﻿<table id="dataTable" class="table table-bordered" style="text-align:center;">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Исполнитель</th>
+            <th>Композиция</th>
+            <th>Голосование</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var sv in Model.AllSongsWithVoices)
+            {
+                <tr>
+                    <td>@sv.Song.Name</td>
+                    <td>@sv.Song.Repertoire.Group.Name</td>
+                    <td style="width: 55%;">
+                        <audio controls>
+                            <source src="@Url.Content(@sv.Song.FilePath)" type="audio/ogg">
+                        </audio>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Voiting", "Home", new { _songId = sv.Song.Id })">
+                            <img src="~/img/activeLike.png" height="60" style="margin: 0 10%;" />
+                        </a>
+                        <span style="color: dimgray; font-size:large;"><b>@sv.CountVoices</b></span>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
